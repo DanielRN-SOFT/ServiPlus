@@ -1,0 +1,17 @@
+.bg-img {
+  background: url(../img/empleados.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.bg-sombra {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.bg-editar {
+  background: url(../img/empleadosEditar.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  
+}
