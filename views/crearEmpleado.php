@@ -130,7 +130,7 @@ require_once '../controllers/crearEmpleado.php';
                         <button type="submit" class="btn btn-primary w-100 fw-bold mt-2 fs-5">Enviar</button>
 
                         <div class="text-center mt-2">
-                            <a href="./index.php" class="text-center">Volver al listado de empleados</a>
+                            <a href="../index.php" class="text-center">Volver al listado de empleados</a>
                         </div>
 
 

@@ -5,6 +5,7 @@ class Usuarios
     private $id;
     private $nombre;
     private $cargo;
+    private $rol;
 
     public function __construct($id = null, $nombre = null, $cargo = null)
     {
@@ -44,5 +45,13 @@ class Usuarios
     public function getCargo()
     {
         return $this->cargo;
+    }
+
+    public function setNombreRol($rol){
+        $this->rol = $rol;
+    }
+
+    public function getNombreRol(){
+        return $this->rol;
     }
 }

@@ -9,7 +9,7 @@
         $passwordPlano = $_POST["password"];
         $hash = password_hash($passwordPlano, PASSWORD_BCRYPT);
 
-        $resultado = $mysql->efectuarConsulta("SELECT nombre, IDempleado, estado, rol_id, password FROM empleados where numDocumento = $numDocumento");
+        $resultado = $mysql->efectuarConsulta("SELECT nombre, IDempleado, estado, rol_id, nombre_rol, password FROM empleados JOIN roles ON id_rol = rol_id where numDocumento = $numDocumento");
         $estadoEmpleados = $mysql->efectuarConsulta("SELECT estado from empleados where numDocumento = $numDocumento");
         $estado = $estadoEmpleados->fetch_assoc()["estado"];
         if ($usuarios = mysqli_fetch_assoc($resultado)) {
@@ -24,6 +24,8 @@
                     $usuario->setNombre($usuarios["nombre"]);
                     $usuario->setId($usuarios['IDempleado']);
                     $usuario->setCargo($usuarios['rol_id']);
+                    $usuario->setNombreRol($usuarios['nombre_rol']);
+                    
 
                     $_SESSION['usuario'] = $usuario;
 

@@ -11,7 +11,8 @@ if ($_SESSION['acceso'] == NULL || $_SESSION["acceso"] == false) {
 $usuarios = new usuarios();
 $usuarios = $_SESSION['usuario'];
 $nombre = $usuarios->getNombre();
-$cargo = $usuarios->getCargo();
+$rol = $usuarios->getCargo();
+$nombreRol = $usuarios->getNombreRol();
 
 $mysql = new MySQL();
 $mysql->conectar();
@@ -33,29 +34,41 @@ $mysql->desconectar();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ServiPlus</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/4c0cbe7815.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
-<body class="bg-body-secondary">
-    <div class="text-center p-3 row d-flex justify-content-center mx-auto">
-        <div class="bg-dark p-3 col-md-12 rounded shadow-sm">
-            <h1 class="display-5 fw-bold text-light text-uppercase"><?php echo "Bienvenido, " . $nombre ?> </h1>
-
+<body class="bg-body-tertiary">
+    <div class="text-center mb-5 row d-flex justify-content-center mx-auto">
+        <div class="col-md-12 bg-primary p-3">
+            <h1 class="display-5 text-light fw-semibold text-uppercase border-bottom p-2 border-5">Listado de empleados </h1>
         </div>
 
     </div>
-    <?php if ($cargo == 1) { ?>
+    <section class="container mt-4">
+        <div class="row d-flex justify-content-center aling-items-center">
+            <div class="col-md-8">
+                <h2><span class="fw-bold">Bienvenido: <br> </span> <?php echo $nombre ?></h2>
+            </div>
+
+            <div class="col-md-4">
+                <h2><span class="fw-bold">Rol: <br> </span> <?php echo $nombreRol ?></h2>
+            </div>
+        </div>
+    </section>
+
+
+    <?php if ($rol == 1) { ?>
         <div class="row">
-            <div class="col-md-4 mx-auto mb-3 mt-4">
-                <a class="text-center" href="./views/crearEmpleado.php"><button class="p-2 btn btn-outline-primary w-100 fw-bold fs-4"> <i class="fa-solid fa-circle-plus"></i> Crear empleado</button></a>
+            <div class="col-md-5 mx-auto mb-3 mt-4">
+                <a class="text-center" href="./views/crearEmpleado.php"><button class="p-3 btn btn-outline-primary w-100 fw-bold fs-4"> <i class="fa-solid fa-circle-plus"></i> Crear empleado</button></a>
             </div>
 
         <?php
     }
         ?>
 
-        <div class="col-md-4 mx-auto mb-3 mt-4">
-            <a class="text-center" href="./controllers/logout.php"><button class="p-2 btn btn-outline-danger w-100 fw-bold fs-4"> <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión </button></a>
+        <div class="col-md-5 mx-auto mb-3 mt-4">
+            <a class="text-center" href="./controllers/logout.php"><button class="p-3 btn btn-outline-danger w-100 fw-bold fs-4"> <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión </button></a>
         </div>
 
 
@@ -67,13 +80,14 @@ $mysql->desconectar();
                 <div class="container mt-3">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2 class="text-center fw-bold text-uppercase">Tabla empleados</h2>
+                            <h2 class="text-center fw-bold text-uppercase"></h2>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <div class="col-12 mt-3">
+            <div class="col-12 mt-2">
+
                 <table class="table table-striped table-bordered table-responsive">
                     <thead class="text-center">
                         <tr class="bg bg-dark">
@@ -88,7 +102,7 @@ $mysql->desconectar();
                             <th scope="col" class="text-dark">Estado</th>
                             <th scope="col" class="text-dark">Telefono</th>
                             <th scope="col" class="text-dark">E-mail</th>
-                            <?php if ($cargo == 1) { ?>
+                            <?php if ($rol == 1) { ?>
                                 <th scope="col" class="text-dark">Acciones</th>
                             <?php } ?>
                         </tr>
@@ -130,7 +144,7 @@ $mysql->desconectar();
                                     <?php echo $fila["correoElectronico"] ?>
                                 </td>
                                 <?php
-                                if ($cargo == 1) { ?>
+                                if ($rol == 1) { ?>
                                     <td>
                                         <div class="d-flex">
                                             <a href="./views/editarEmpleado.php?IDempleado=<?php echo $fila["IDempleado"]; ?>"><button class="btn btn-outline-warning mx-2"><i class="fa-solid fa-pen-to-square"></i></button></a>
@@ -165,6 +179,7 @@ $mysql->desconectar();
 
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/4c0cbe7815.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
