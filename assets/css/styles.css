@@ -15,3 +15,11 @@
   background-attachment: fixed;
   
 }
+
+.bg-login{
+  background: url(../img/fondo_azul.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
