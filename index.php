@@ -63,6 +63,10 @@ $mysql->desconectar();
                 <a class="text-center" href="./views/crearEmpleado.php"><button class="p-3 btn btn-outline-primary w-100 fw-bold fs-4"> <i class="fa-solid fa-circle-plus"></i> Crear empleado</button></a>
             </div>
 
+
+
+
+
         <?php
     }
         ?>
@@ -70,6 +74,26 @@ $mysql->desconectar();
         <div class="col-md-5 mx-auto mb-3 mt-4">
             <a class="text-center" href="./controllers/logout.php"><button class="p-3 btn btn-outline-danger w-100 fw-bold fs-4"> <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión </button></a>
         </div>
+        </div>
+        <?php if ($rol == 1) { ?>
+
+            <div class="row">
+                <div class="col-md-5 mx-auto mb-3 mt-4">
+                    <a class="text-center" href="./views/generar_pdf.php"><button class="p-3 btn btn-outline-warning w-100 fw-bold fs-4"> <i class="fa-solid fa-circle-plus"></i> Generar reporte general</button></a>
+                </div>
+
+
+
+                <div class="col-md-5 mx-auto mb-3 mt-4">
+                    <a class="text-center" href="./views/ListadoDepartamentosPDF.php"><button class="p-3 btn btn-outline-info w-100 fw-bold fs-4"> <i class="fa-solid fa-circle-plus"></i> Generar reporte por departamento</button></a>
+                </div>
+            </div>
+
+
+
+
+
+        <?php } ?>
 
 
         </div>
