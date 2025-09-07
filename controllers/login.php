@@ -32,6 +32,8 @@
                     $_SESSION['acceso'] = true;
 
                     header("Location: ../index.php");
+                }else{
+                header("Location: ../views/login.php");
                 }
             } else {
 

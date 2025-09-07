@@ -13,13 +13,54 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  
 }
 
-.bg-login{
+.bg-login {
   background: url(../img/fondo_azul.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+
+.a-crear {
+  border-bottom: 0.2rem solid transparent; /* estado inicial */
+  transition: border-bottom 0.3s ease; /* transición en el estado base */
+}
+.a-crear:hover {
+  border-bottom: 0.2rem solid blue !important;
+}
+
+.a-pdf-general {
+  border-bottom: 0.2rem solid transparent; /* estado inicial */
+  transition: border-bottom 0.3s ease; /* transición en el estado base */
+}
+
+.a-pdf-general:hover {
+  border-bottom: 0.2rem solid rgb(167, 167, 0) !important;
+}
+
+.a-pdf-dpto {
+  border-bottom: 0.2rem solid transparent;
+  transition: border-bottom 0.3s ease;
+}
+.a-pdf-dpto:hover {
+  border-bottom: 0.2rem solid rgb(0, 168, 168);
+}
+
+.a-grafico-dpto {
+  border-bottom: 0.2rem solid transparent;
+  transition: border-bottom 0.3s ease;
+}
+.a-grafico-dpto:hover {
+  border-bottom: 0.2rem solid green;
+}
+
+.a-grafico-cargo {
+  border-bottom: 0.2rem solid transparent;
+  transition: border-bottom 0.3s ease;
+}
+.a-grafico-cargo:hover {
+  border-bottom: 0.2rem solid red;
+}
+

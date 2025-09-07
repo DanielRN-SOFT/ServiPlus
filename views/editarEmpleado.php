@@ -141,10 +141,21 @@ $mysql->desconectar();
                                 <label for="rol" class="form-label">Rol:</label>
                                 <select class="form-select" id=rol" name="rol" required>
                                     <?php while ($filaRoles = $roles->fetch_assoc()): ?>
-                                        <option value="<?php echo $filaRoles["id_rol"] ?>" <?php echo($fila["rol_id"] == $filaRoles["id_rol"] ? "selected" : "") ?>><?php echo $filaRoles["nombre_rol"] ?></option>
+                                        <option value="<?php echo $filaRoles["id_rol"] ?>" <?php echo ($fila["rol_id"] == $filaRoles["id_rol"] ? "selected" : "") ?>><?php echo $filaRoles["nombre_rol"] ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <label for="oldPassword" class="form-label">Contraseña antigua:</label>
+                            <input type="text" class="form-control" id="oldPassword" name="oldPassword" value="">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="newPassword" class="form-label">Contraseña nueva:</label>
+                            <input type="text" class="form-control" id="oldPassword" name="newPassword" value="" >
                         </div>
                     </div>
                     <button type="submit" class="btn btn-warning w-100 fw-bold fs-5">Enviar</button>

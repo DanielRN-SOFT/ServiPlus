@@ -21,21 +21,21 @@ $pdf->Ln(5);
 $pdf->SetFont("Arial", "B", 8);
 
 
-$pdf->Cell(45, 10, 'Nombre', 1, 0);
+$pdf->Cell(60, 10, 'Nombre', 1, 0);
 $pdf->Cell(20, 10, 'Documento', 1,0);
-$pdf->Cell(30, 10, 'Cargo', 1,0);
-$pdf->Cell(40, 10, 'Departamento', 1, 0);
+$pdf->Cell(25, 10, 'Cargo', 1,0);
+$pdf->Cell(30, 10, 'Departamento', 1, 0);
 $pdf->Cell(20, 10, 'FechaIngreso', 1, 0);
 $pdf->Cell(25, 10, 'Salario', 1, 0);
 $pdf->Cell(15, 10, 'Estado', 1, 1);
 
 
-$pdf->SetFont('Arial', 12);
+$pdf->SetFont('Arial', "", 8);
 foreach ($empleados as $emp) {
-    $pdf->Cell(45,10, $emp["nombre"], 1);
+    $pdf->Cell(60,10, $emp["nombre"], 1);
     $pdf->Cell(20, 10, $emp["numDocumento"], 1);
-    $pdf->Cell(30, 10, $emp["nombreCargo"], 1);
-    $pdf->Cell(40, 10, $emp["nombreDepartamento"], 1);
+    $pdf->Cell(25, 10, $emp["nombreCargo"], 1);
+    $pdf->Cell(30, 10, $emp["nombreDepartamento"], 1);
     $pdf->Cell(20, 10, $emp["fechaIngreso"], 1);
     $pdf->Cell(25, 10, $emp["salarioBase"], 1);
     $pdf->Cell(15, 10, $emp["estado"], 1);
